@@ -36,6 +36,7 @@ Route::post('/cme/potensi-perangkat/create', [App\Http\Controllers\CME_Controlle
 Route::get('/cme/potensi-perangkat/manage', [App\Http\Controllers\CME_Controller::class, 'viewManage'])->name('store_cme_potensi_perangkat');
 Route::get('/cme/potensi-perangkat/{id}/delete', [App\Http\Controllers\CME_Controller::class, 'destroy']);
 Route::get('/cme/potensi-perangkat/{id}/update', 'CME_Controller@viewUpdate');
+Route::post('/cme/potensi-perangkat/{id}/update', 'CME_Controller@edit');
 Route::post('/bahan/manage', [App\Http\Controllers\StaffController::class, 'store']);
 Route::post('/bahan/update', [App\Http\Controllers\StaffController::class, 'update']);
 Route::get('/bahan/{id}/delete', [App\Http\Controllers\StaffController::class, 'destroy']);

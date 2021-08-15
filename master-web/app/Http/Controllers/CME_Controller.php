@@ -18,7 +18,7 @@ class CME_Controller extends Controller
     }
     public function viewUpdate($id)
     {
-        $data = CME_PotensiPerangkat::where('id','=',$id);
+        $data = CME_PotensiPerangkat::where('id', '=', $id)->first();
         return view('cme.potensi_perangkat.edit')->with(compact('data'));
     }
 
@@ -52,6 +52,41 @@ class CME_Controller extends Controller
             return back()->with(["success" => "Berhasil Menambahkan Data"]);
         } else {
             return back()->with(["failed" => "Gagal Menambahkan Data"]);
+        }
+    }
+
+    function edit(Request $request,$id)
+    {
+        // dd($request->all());
+
+        $validateComponent = [
+            // RAZ : not edited yet
+            "user_name" => "required",
+            "user_email" => "required",
+            "user_password" => "required",
+            "user_role" => "required",
+        ];
+
+        // $this->validate($request, $validateComponent);
+        $data = CME_PotensiPerangkat::findOrFail($id);
+
+        if ($request->jenis_perangkat == null || $request->jenis_perangkat=="") {
+        } else {
+            $data->jenis_perangkat = $request->jenis_perangkat;
+        }
+        $data->merk = $request->merk;
+        $data->type = $request->type;
+        $data->no_seri = $request->no_seri;
+        $data->kap_tps = $request->kap_tps;
+        $data->kap_tpk = $request->kap_tpk;
+        $data->beban = $request->beban;
+        $data->kondisi = $request->kondisi;
+        $data->thn_ope = $request->tahun_operasi;
+        $data->keterangan = $request->keterangan;
+        if ($data->save()) {
+            return back()->with(["success" => "Berhasil Mengupdate Data"]);
+        } else {
+            return back()->with(["failed" => "Gagal Mengupdate Data"]);
         }
     }
 
