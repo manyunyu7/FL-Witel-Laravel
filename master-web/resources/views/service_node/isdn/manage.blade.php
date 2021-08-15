@@ -5,13 +5,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>CME - Potensi Perangkat</h3>
-                    <p class="text-subtitle text-muted">Gunakan Menu Ini untuk melakukan manajemen potensi perangkat CME</p>
+                    <h3>Service Node</h3>
+                    <p class="text-subtitle text-muted">Service Node - Data Integration Plan</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">CME - Potensi Perangkat</a></li>
+                            <li class="breadcrumb-item"><a href="{{ url('admin/staff/manage') }}">Service Node - Data
+                                    Integration Plan</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Manage</li>
                         </ol>
                     </nav>
@@ -32,7 +33,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Manage Data CME Potensi Perangkat</h4>
+                        <h4 class="card-title">Manage Data Integration Plan </h4>
                     </div>
 
                     <div class="card-body">
@@ -45,43 +46,39 @@
                                         <thead>
                                             <tr>
                                                 <th data-sortable="">No</th>
-                                                <th data-sortable="">Jenis Perangkat</th>
-                                                <th data-sortable="">Merk</th>
-                                                <th data-sortable="">type</th>
-                                                <th data-sortable="">No Seri</th>
-                                                <th data-sortable="">Kap. TPS</th>
-                                                <th data-sortable="">Kap. TPK</th>
-                                                <th data-sortable="">Beban</th>
-                                                <th data-sortable="">Kondisi</th>
-                                                <th data-sortable="">Thn Ope.</th>
+                                                <th data-sortable="">TG Number</th>
+                                                <th data-sortable="">TG Name</th>
+                                                <th data-sortable="">Sub Route Number</th>
+                                                <th data-sortable="">Name</th>
+                                                <th data-sortable="">Name Customers</th>
+                                                <th data-sortable="">Signaling Link Numbers</th>
+                                                <th data-sortable="">Telp</th>
                                                 <th data-sortable="">Keterangan</th>
-                                                <th data-sortable="">Diinput Pada</th>
+                                                <th data-sortable="">Equipment ID</th>
                                                 <th data-sortable="">Edit</th>
                                                 <th data-sortable="">Hapus</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($data as $user)
+                                            @forelse ($data as $dat)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $user->jenis_perangkat }}</td>
-                                                    <td>{{ $user->merk }}</td>
-                                                    <td>{{ $user->type }}</td>
-                                                    <td>{{ $user->no_seri }}</td>
-                                                    <td>{{ $user->kap_tps }}</td>
-                                                    <td>{{ $user->kap_tpk }}</td>
-                                                    <td>{{ $user->beban }}</td>
-                                                    <td>{{ $user->kondisi }}</td>
-                                                    <td>{{ $user->thn_ope }}</td>
-                                                    <td>{{ $user->keterangan }}</td>
-                                                    <td>{{ $user->created_at }}</td>
+                                                    <td>{{ $dat->tg_no }}</td>
+                                                    <td>{{ $dat->tg_name }}</td>
+                                                    <td>{{ $dat->sub_route_number }}</td>
+                                                    <td>{{ $dat->name }}</td>
+                                                    <td>{{ $dat->name_customers }}</td>
+                                                    <td>{{ $dat->signaling_link_number }}</td>
+                                                    <td>{{ $dat->telp }}</td>
+                                                    <td>{{ $dat->keterangan }}</td>
+                                                    <td>{{ $dat->equipment_id }}</td>
                                                     <td>
-                                                        <button id="{{ $user->id }}"  data-toggle="modal" type="button"
+                                                        <button id="{{ $dat->id }}"  data-toggle="modal" type="button"
                                                             class="btn btn-primary btn-delete">Hapus Data</button>
                                                     </td>
                                                     <td>
-                                                        <a href="{{url('cme/potensi-perangkat/'.$user->id.'/update')}}">
-                                                            <button id="{{ $user->id }}"  type="button"
+                                                        <a href="{{url('/service-node/isdn/'.$dat->id.'/update')}}">
+                                                            <button id="{{ $dat->id }}"  type="button"
                                                           class="btn btn-primary">Edit Data</button>
                                                         </a>
                                                       

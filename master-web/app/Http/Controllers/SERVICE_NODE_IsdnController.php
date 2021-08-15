@@ -15,13 +15,13 @@ class SERVICE_NODE_IsdnController extends Controller
     }
     public function viewManage()
     {
-        $data = SERVICE_NODE_DataIntegrationNode::all();
-        return view('service_node.data_integration_plan.manage')->with(compact('data'));
+        $data = mISDN::all();
+        return view('service_node.isdn.manage')->with(compact('data'));
     }
     public function viewUpdate($id)
     {
-        $data = SERVICE_NODE_DataIntegrationNode::where('id', '=', $id)->first();
-        return view('service_node.data_integration_plan.edit')->with(compact('data'));
+        $data = mISDN::where('id', '=', $id)->first();
+        return view('service_node.isdn.edit')->with(compact('data'));
     }
 
     function store(Request $request)
@@ -69,17 +69,21 @@ class SERVICE_NODE_IsdnController extends Controller
 
         // $this->validate($request, $validateComponent);
 
-        $data = SERVICE_NODE_DataIntegrationNode::findOrFail($id);
-        $data->mgw_node = $request->mgw_node;
-        $data->stm_no = $request->stm_no;
-        $data->logical_e1 = $request->logical_e1;
-        $data->tid_start = $request->tid_start;
-        $data->tid_end = $request->tid_end;
-        $data->destination = $request->destination;
+       
+        $data = mISDN::findOrFail($id);
+        $data->tg_no = $request->tg_no;
+        $data->tg_name = $request->tg_name;
+        $data->sub_route_number = $request->sub_route_number;
+        $data->name = $request->name;
+        $data->name_customers = $request->name_customers;
+        $data->signaling_link_number = $request->signaling_link_number;
+        $data->telp = $request->telp;
+        $data->keterangan = $request->keterangan;
+        $data->equipment_id = $request->equipment_id;
         if ($data->save()) {
-            return back()->with(["success" => "Berhasil Mengupdate Data"]);
+            return back()->with(["success" => "Berhasil Menambahkan Data"]);
         } else {
-            return back()->with(["failed" => "Gagal Mengupdate Data"]);
+            return back()->with(["failed" => "Gagal Menambahkan Data"]);
         }
     }
 
