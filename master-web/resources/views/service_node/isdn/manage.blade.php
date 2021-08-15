@@ -154,7 +154,6 @@
     <script>
         $('body').on("click", ".btn-delete", function() {
             var id = $(this).attr("id")
-            $(".btn-destroy").attr("href", window.location.origin + "/karyawan/" + id + "/delete")
             $("#destroy-modal").modal("show")
         });
     </script>
@@ -190,7 +189,7 @@
 
         $('body').on("click", ".btn-delete", function() {
             var id = $(this).attr("id")
-            $(".btn-destroy").attr("href", window.location.origin + "/cme/potensi-perangkat/" + id + "/delete")
+            $(".btn-destroy").attr("href", window.location.origin + "/service-node/isdn/" + id + "/delete")
             $("#destroy-modal").modal("show")
         });
     </script>

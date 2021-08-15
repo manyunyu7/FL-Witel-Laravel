@@ -89,7 +89,7 @@ class SERVICE_NODE_IsdnController extends Controller
 
     function destroy($id)
     {
-        $data = CME_PotensiPerangkat::findOrFail($id);
+        $data = mISDN::findOrFail($id);
         if ($data->delete()) {
             return back()->with(["success" => "Berhasil Menghapus Data"]);
         } else {
