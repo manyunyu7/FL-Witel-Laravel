@@ -37,9 +37,15 @@ Route::get('/cme/potensi-perangkat/manage', [App\Http\Controllers\CME_Controller
 Route::get('/cme/potensi-perangkat/{id}/delete', [App\Http\Controllers\CME_Controller::class, 'destroy']);
 Route::get('/cme/potensi-perangkat/{id}/update', 'CME_Controller@viewUpdate');
 Route::post('/cme/potensi-perangkat/{id}/update', 'CME_Controller@edit');
-Route::post('/bahan/manage', [App\Http\Controllers\StaffController::class, 'store']);
-Route::post('/bahan/update', [App\Http\Controllers\StaffController::class, 'update']);
-Route::get('/bahan/{id}/delete', [App\Http\Controllers\StaffController::class, 'destroy']);
+
+
+Route::get('/service-node/data-integration-plan/create', [App\Http\Controllers\SERVICE_NODE_IntegrationPlanController::class, 'viewCreate']);
+Route::post('/service-node/data-integration-plan/create', 'SERVICE_NODE_IntegrationPlanController@store')->name('store_cme_potensi_perangkat');
+Route::get('/service-node/data-integration-plan/manage', 'SERVICE_NODE_IntegrationPlanController@viewManage')->name('store_cme_potensi_perangkat');
+Route::get('/service-node/data-integration-plan/{id}/delete', 'SERVICE_NODE_IntegrationPlanController@destroy');
+Route::get('/service-node/data-integration-plan/{id}/update', 'SERVICE_NODE_IntegrationPlanController@viewUpdate');
+Route::post('/service-node/data-integration-plan/{id}/update', 'SERVICE_NODE_IntegrationPlanController@edit');
+
 
 
 Route::post('/bahan/create', [App\Http\Controllers\BahanController::class, 'viewCreate']);

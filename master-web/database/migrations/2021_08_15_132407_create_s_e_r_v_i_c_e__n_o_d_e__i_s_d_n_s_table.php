@@ -13,8 +13,10 @@ class CreateSERVICENODEISDNSTable extends Migration
      */
     public function up()
     {
-        Schema::create('s_e_r_v_i_c_e__n_o_d_e__i_s_d_n_s', function (Blueprint $table) {
+        Schema::create('service_node_isdns', function (Blueprint $table) {
             $table->id();
+            $table->string('tg_no')->nullable();
+            $table->string('tg_no')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateSERVICENODEISDNSTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s_e_r_v_i_c_e__n_o_d_e__i_s_d_n_s');
+        Schema::dropIfExists('service_node_isdns');
     }
 }

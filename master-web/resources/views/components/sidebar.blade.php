@@ -37,6 +37,8 @@
                     </ul>
                 </li>
 
+                <hr>
+
                 <li class="sidebar-title">UNIT CME</li>
 
                 <li class="sidebar-item  has-sub  {{ (Request::is('cme/*')) ? 'active' : ''}}">
@@ -49,8 +51,28 @@
                         <li class="submenu-item  {{ (Request::is('cme/potensi-perangkat/create')) ? 'active' : ''}} ">
                             <a href="{{ url('/cme/potensi-perangkat/create') }}">Input Data Baru</a>
                         </li>
-                        <li class="submenu-item ">
+                        <li class="submenu-item  {{ (Request::is('cme/potensi-perangkat/manage')) ? 'active' : ''}} ">
                             <a href="{{ url('/cme/potensi-perangkat/manage') }}">Manage Data</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <hr>
+
+                <li class="sidebar-title">UNIT Service Node</li>
+
+                <li class="sidebar-item  has-sub  {{ (Request::is('service-node/*')) ? 'active' : ''}}">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
+                        <span>Data Integration Plan
+                        </span>
+                    </a>
+                    <ul class="submenu {{ (Request::is('service-node/*')) ? 'active' : ''}} ">
+                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/create')) ? 'active' : ''}} ">
+                            <a href="{{ url('/service-node/data-integration-plan/create') }}">Input Data Baru</a>
+                        </li>
+                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/manage')) ? 'active' : ''}} ">
+                            <a href="{{ url('/service-node/data-integration-plan/manage') }}">Manage Data</a>
                         </li>
                     </ul>
                 </li>

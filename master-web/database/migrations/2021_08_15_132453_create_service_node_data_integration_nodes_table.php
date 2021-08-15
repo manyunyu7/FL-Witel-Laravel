@@ -13,8 +13,13 @@ class CreateSERVICENODEDataIntegrationNodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('s_e_r_v_i_c_e__n_o_d_e__data_integration_nodes', function (Blueprint $table) {
+        Schema::create('service_node_data_integration_nodes', function (Blueprint $table) {
             $table->id();
+            $table->string('mgw_node')->nullable();
+            $table->string('stm_no')->nullable();
+            $table->string('logical_e1')->nullable();
+            $table->string('tid_start')->nullable();
+            $table->string('tid_end')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateSERVICENODEDataIntegrationNodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('s_e_r_v_i_c_e__n_o_d_e__data_integration_nodes');
+        Schema::dropIfExists('service_node_data_integration_nodes');
     }
 }
