@@ -17,6 +17,13 @@ class CreateSERVICENODEISDNSTable extends Migration
             $table->id();
             $table->string('tg_no')->nullable();
             $table->string('tg_name')->nullable();
+            $table->string('sub_route_number')->nullable();
+            $table->string('name')->nullable();
+            $table->string('name_customers')->nullable();
+            $table->string('signaling_link_number')->nullable();
+            $table->string('telp')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->string('equipment_id')->nullable();
             $table->timestamps();
         });
     }
