@@ -46,6 +46,13 @@ Route::get('/service-node/data-integration-plan/{id}/delete', 'SERVICE_NODE_Inte
 Route::get('/service-node/data-integration-plan/{id}/update', 'SERVICE_NODE_IntegrationPlanController@viewUpdate');
 Route::post('/service-node/data-integration-plan/{id}/update', 'SERVICE_NODE_IntegrationPlanController@edit');
 
+Route::get('/service-node/isdn/create', [App\Http\Controllers\SERVICE_NODE_IsdnController::class, 'viewCreate']);
+Route::post('/service-node/isdn/create', 'SERVICE_NODE_IsdnController@store')->name('store_isdn');
+Route::get('/service-node/isdn/manage', 'SERVICE_NODE_IsdnController@viewManage');
+Route::get('/service-node/isdn/{id}/delete', 'SERVICE_NODE_IsdnController@destroy');
+Route::get('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@viewUpdate');
+Route::post('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@edit');
+
 
 
 Route::post('/bahan/create', [App\Http\Controllers\BahanController::class, 'viewCreate']);

@@ -61,7 +61,7 @@
 
                 <li class="sidebar-title">UNIT Service Node</li>
 
-                <li class="sidebar-item  has-sub  {{ (Request::is('service-node/*')) ? 'active' : ''}}">
+                <li class="sidebar-item  has-sub  {{ (Request::is('service-node/data-integration-plan/*')) ? 'active' : ''}}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Data Integration Plan
@@ -76,6 +76,8 @@
                         </li>
                     </ul>
                 </li>
+
+
                 <li class="sidebar-item  has-sub  {{ (Request::is('service-node/isdn/*')) ? 'active' : ''}}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
@@ -83,11 +85,11 @@
                         </span>
                     </a>
                     <ul class="submenu {{ (Request::is('service-node/isdn/*')) ? 'active' : ''}} ">
-                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/create')) ? 'active' : ''}} ">
-                            <a href="{{ url('/service-node/data-integration-plan/create') }}">Input Data Baru</a>
+                        <li class="submenu-item  {{ (Request::is('service-node/isdn/create')) ? 'active' : ''}} ">
+                            <a href="{{ url('/service-node/isdn/create') }}">Input Data Baru</a>
                         </li>
-                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/manage')) ? 'active' : ''}} ">
-                            <a href="{{ url('/service-node/data-integration-plan/manage') }}">Manage Data</a>
+                        <li class="submenu-item  {{ (Request::is('service-node/isdn/manage')) ? 'active' : ''}} ">
+                            <a href="{{ url('/service-node/isdn/manage') }}">Manage Data</a>
                         </li>
                     </ul>
                 </li>
