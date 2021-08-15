@@ -16,7 +16,7 @@ class CreateSERVICENODEISDNSTable extends Migration
         Schema::create('service_node_isdns', function (Blueprint $table) {
             $table->id();
             $table->string('tg_no')->nullable();
-            $table->string('tg_no')->nullable();
+            $table->string('tg_name')->nullable();
             $table->timestamps();
         });
     }

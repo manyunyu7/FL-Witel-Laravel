@@ -40,7 +40,7 @@ Route::post('/cme/potensi-perangkat/{id}/update', 'CME_Controller@edit');
 
 
 Route::get('/service-node/data-integration-plan/create', [App\Http\Controllers\SERVICE_NODE_IntegrationPlanController::class, 'viewCreate']);
-Route::post('/service-node/data-integration-plan/create', 'SERVICE_NODE_IntegrationPlanController@store')->name('store_cme_potensi_perangkat');
+Route::post('/service-node/data-integration-plan/create', 'SERVICE_NODE_IntegrationPlanController@store')->name('store_integration_plan');
 Route::get('/service-node/data-integration-plan/manage', 'SERVICE_NODE_IntegrationPlanController@viewManage')->name('store_cme_potensi_perangkat');
 Route::get('/service-node/data-integration-plan/{id}/delete', 'SERVICE_NODE_IntegrationPlanController@destroy');
 Route::get('/service-node/data-integration-plan/{id}/update', 'SERVICE_NODE_IntegrationPlanController@viewUpdate');

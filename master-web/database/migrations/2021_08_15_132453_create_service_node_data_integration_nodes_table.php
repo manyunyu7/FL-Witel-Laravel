@@ -20,6 +20,7 @@ class CreateSERVICENODEDataIntegrationNodesTable extends Migration
             $table->string('logical_e1')->nullable();
             $table->string('tid_start')->nullable();
             $table->string('tid_end')->nullable();
+            $table->string('destination')->nullable();
             $table->timestamps();
         });
     }
