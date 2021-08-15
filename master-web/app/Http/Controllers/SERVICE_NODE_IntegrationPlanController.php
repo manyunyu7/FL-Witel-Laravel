@@ -81,7 +81,7 @@ class SERVICE_NODE_IntegrationPlanController extends Controller
 
     function destroy($id)
     {
-        $data = CME_PotensiPerangkat::findOrFail($id);
+        $data = SERVICE_NODE_DataIntegrationNode::findOrFail($id);
         if ($data->delete()) {
             return back()->with(["success" => "Berhasil Menghapus Data"]);
         } else {
