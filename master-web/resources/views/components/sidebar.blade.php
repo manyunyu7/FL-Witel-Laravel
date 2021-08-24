@@ -3,7 +3,8 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="#"><img src="{{ asset('/frontend') }}/assets/images/logo/logo.png" alt="Logo" width="100%" srcset=""></a>
+                    <a href="#"><img src="{{ asset('/frontend') }}/assets/images/logo/logo.png" alt="Logo"
+                            width="100%" srcset=""></a>
                 </div>
                 <div class="toggler">
                     <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -39,61 +40,282 @@
 
                 <hr>
 
-                <li class="sidebar-title">UNIT CME</li>
+                <li class="sidebar-title">UNIT CME </li>
 
-                <li class="sidebar-item  has-sub  {{ (Request::is('cme/*')) ? 'active' : ''}}">
+                <li class="sidebar-item  has-sub ">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
-                        <span>Potensi Perangkat CME
+                        <span>Potensi Perangkat
                         </span>
                     </a>
-                    <ul class="submenu {{ (Request::is('cme/*')) ? 'active' : ''}} ">
-                        <li class="submenu-item  {{ (Request::is('cme/potensi-perangkat/create')) ? 'active' : ''}} ">
-                            <a href="{{ url('/cme/potensi-perangkat/create') }}">Input Data Baru</a>
+                    <ul class="submenu {{ Request::is('cme/potensi-perangkat/*') ? 'active' : '' }} ">
+                        <li class="sidebar-item  has-sub  ">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Ahmad Yani
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/1/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/1/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/1/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/1/manage') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/1/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="submenu-item  {{ (Request::is('cme/potensi-perangkat/manage')) ? 'active' : ''}} ">
-                            <a href="{{ url('/cme/potensi-perangkat/manage') }}">Manage Data</a>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/2/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Tanjung Sari
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/2/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/2/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/2/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/2/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/2/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
                         </li>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/3/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Sumedang
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/3/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/3/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/3/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/3/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/3/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/4/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Ujung Berung
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/4/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/4/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/4/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/4/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/4/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/5/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Turangga
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/5/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/5/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/5/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/5/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/5/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/6/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Tegalega
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/6/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/6/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/6/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/6/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/6/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/7/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Dago
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/7/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/7/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/7/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/7/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/7/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/8/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Hegarmanah
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/8/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/8/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/8/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/8/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/8/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/9/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Gegerkalong
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/9/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/9/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/9/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/9/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/9/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/10/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Lembong
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/10/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/10/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/10/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/10/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/10/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/11/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Kopo
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/11/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/11/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/11/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/11/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/11/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="sidebar-item  has-sub  {{ Request::is('cme/potensi-perangkat/12/*') ? 'active' : '' }}">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
+                                <span>Cijawura
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/12/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/12/create') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/12/create') }}">Input Data Baru</a>
+                                </li>
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/12/manage/') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/12/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
                     </ul>
                 </li>
+
+     
 
                 <hr>
 
                 <li class="sidebar-title">UNIT Service Node</li>
 
-                <li class="sidebar-item  has-sub  {{ (Request::is('service-node/data-integration-plan/*')) ? 'active' : ''}}">
+                <li
+                    class="sidebar-item  has-sub  {{ Request::is('service-node/data-integration-plan/*') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Data Integration Plan
                         </span>
                     </a>
-                    <ul class="submenu {{ (Request::is('service-node/data-integration-plan/*')) ? 'active' : ''}} ">
-                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/create')) ? 'active' : ''}} ">
+                    <ul class="submenu {{ Request::is('service-node/data-integration-plan/*') ? 'active' : '' }} ">
+                        <li
+                            class="submenu-item  {{ Request::is('service-node/data-integration-plan/create') ? 'active' : '' }} ">
                             <a href="{{ url('/service-node/data-integration-plan/create') }}">Input Data Baru</a>
                         </li>
-                        <li class="submenu-item  {{ (Request::is('service-node/data-integration-plan/manage')) ? 'active' : ''}} ">
+                        <li
+                            class="submenu-item  {{ Request::is('service-node/data-integration-plan/manage') ? 'active' : '' }} ">
                             <a href="{{ url('/service-node/data-integration-plan/manage') }}">Manage Data</a>
                         </li>
                     </ul>
                 </li>
 
 
-                <li class="sidebar-item  has-sub  {{ (Request::is('service-node/isdn/*')) ? 'active' : ''}}">
+                <li class="sidebar-item  has-sub  {{ Request::is('service-node/isdn/*') ? 'active' : '' }}">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Data ISDN
                         </span>
                     </a>
-                    <ul class="submenu {{ (Request::is('service-node/isdn/*')) ? 'active' : ''}} ">
-                        <li class="submenu-item  {{ (Request::is('service-node/isdn/create')) ? 'active' : ''}} ">
+                    <ul class="submenu {{ Request::is('service-node/isdn/*') ? 'active' : '' }} ">
+                        <li class="submenu-item  {{ Request::is('service-node/isdn/create') ? 'active' : '' }} ">
                             <a href="{{ url('/service-node/isdn/create') }}">Input Data Baru</a>
                         </li>
-                        <li class="submenu-item  {{ (Request::is('service-node/isdn/manage')) ? 'active' : ''}} ">
+                        <li class="submenu-item  {{ Request::is('service-node/isdn/manage') ? 'active' : '' }} ">
                             <a href="{{ url('/service-node/isdn/manage') }}">Manage Data</a>
                         </li>
                     </ul>
                 </li>
-            
+
 
             </ul>
         </div>

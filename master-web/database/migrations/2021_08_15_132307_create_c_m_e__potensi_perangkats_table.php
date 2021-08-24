@@ -15,6 +15,7 @@ class CreateCMEPotensiPerangkatsTable extends Migration
     {
         Schema::create('c_m_e__potensi_perangkats', function (Blueprint $table) {
             $table->id();
+            $table->string('divisi_cme')->nullable();
             $table->string('jenis_perangkat')->nullable();
             $table->string('merk')->nullable();
             $table->string('type')->nullable();

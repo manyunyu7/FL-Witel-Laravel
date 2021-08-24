@@ -24,6 +24,15 @@ class UserSeeder extends Seeder
             'created_at' => Carbon::now()->timezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->timezone('Asia/Bangkok')->format('Y-m-d H:i:s')
         ]);
+        DB::table('users')->insert([
+            'name' => 'Super Admin',
+            'role' => '1', //1 : admin , 2: staff , 3: user
+            'contact' => '088223738709',
+            'email' => 'superadmin@gmail.com',
+            'password' => bcrypt('password'),
+            'created_at' => Carbon::now()->timezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->timezone('Asia/Bangkok')->format('Y-m-d H:i:s')
+        ]);
 
     }
 }

@@ -31,9 +31,9 @@ Route::post('/user/update', [App\Http\Controllers\StaffController::class, 'updat
 Route::get('/user/{id}/delete', [App\Http\Controllers\StaffController::class, 'destroy']);
 
 
-Route::get('/cme/potensi-perangkat/create', [App\Http\Controllers\CME_Controller::class, 'viewCreate']);
+Route::get('/cme/potensi-perangkat/{divisi}/create', [App\Http\Controllers\CME_Controller::class, 'viewCreate']);
 Route::post('/cme/potensi-perangkat/create', [App\Http\Controllers\CME_Controller::class, 'store'])->name('store_cme_potensi_perangkat');
-Route::get('/cme/potensi-perangkat/manage', [App\Http\Controllers\CME_Controller::class, 'viewManage'])->name('store_cme_potensi_perangkat');
+Route::get('/cme/potensi-perangkat/{divisi}/manage', [App\Http\Controllers\CME_Controller::class, 'viewManage'])->name('store_cme_potensi_perangkat');
 Route::get('/cme/potensi-perangkat/{id}/delete', [App\Http\Controllers\CME_Controller::class, 'destroy']);
 Route::get('/cme/potensi-perangkat/{id}/update', 'CME_Controller@viewUpdate');
 Route::post('/cme/potensi-perangkat/{id}/update', 'CME_Controller@edit');
@@ -63,4 +63,12 @@ Route::get('/bahan/{id}/delete', [App\Http\Controllers\StaffController::class, '
 
 Route::get('/admin/user/manage', [App\Http\Controllers\StaffController::class, 'viewAdminManage']);
 Route::get('/admin/user/{id}/edit', [App\Http\Controllers\StaffController::class, 'viewAdminEdit']);
+
+Route::get('logout', function () {
+    auth()->logout();
+    Session()->flush();
+
+    return Redirect::to('/');
+})->name('logout');
+
 

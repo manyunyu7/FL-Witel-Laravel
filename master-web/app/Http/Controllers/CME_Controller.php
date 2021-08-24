@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CME_Controller extends Controller
 {
-    public function viewCreate()
+    public function viewCreate($divisi)
     {
         return view('cme.potensi_perangkat.create');
     }
