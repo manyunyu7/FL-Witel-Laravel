@@ -45,6 +45,7 @@
                                         <thead>
                                             <tr>
                                                 <th data-sortable="">No</th>
+                                                <th data-sortable="">Lokasi</th>
                                                 <th data-sortable="">Jenis Perangkat</th>
                                                 <th data-sortable="">Merk</th>
                                                 <th data-sortable="">type</th>
@@ -64,6 +65,7 @@
                                             @forelse ($data as $user)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $user->lokasi_name }}</td>
                                                     <td>{{ $user->jenis_perangkat }}</td>
                                                     <td>{{ $user->merk }}</td>
                                                     <td>{{ $user->type }}</td>

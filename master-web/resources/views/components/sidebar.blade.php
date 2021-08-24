@@ -52,6 +52,19 @@
                         <li class="sidebar-item  has-sub  ">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
+                                <span>Semua Wilayah
+                                </span>
+                            </a>
+                            <ul class="submenu {{ Request::is('cme/potensi-perangkat/all/*') ? 'active' : '' }} ">
+                                <li
+                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/all/manage') ? 'active' : '' }} ">
+                                    <a href="{{ url('/cme/potensi-perangkat/all/manage') }}">Manage Data</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item  has-sub  ">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-stack"></i>
                                 <span>Ahmad Yani
                                 </span>
                             </a>
@@ -97,7 +110,7 @@
                                     <a href="{{ url('/cme/potensi-perangkat/3/create') }}">Input Data Baru</a>
                                 </li>
                                 <li
-                                    class="submenu-item  {{ Request::is('cme/potensi-perangkat/3/manage/') ? 'active' : '' }} ">
+                                    class="submenu-item  {{ Request::is('/cme/potensi-perangkat/3/manage/') ? 'active' : '' }} ">
                                     <a href="{{ url('/cme/potensi-perangkat/3/manage') }}">Manage Data</a>
                                 </li>
                             </ul>

@@ -31,37 +31,56 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Tambahkan Data Potensi Perangkat</h4>
+                <h4 class="card-title">Lokasi : {{ $divisi_name }}</h4>
             </div>
 
             <div class="card-body">
                 <form action="{{ url('cme/potensi-perangkat/create') }}" method="post">
                     <input type="hidden" name="id" value="">
+                    <input type="hidden" name="id_divisi" value="{{ $divisi_code }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
 
-                            <div class="form-group ">
-                                <label for="">Jenis Perangkat</label>
-                                <select class="form-control form-select" name="jenis_perangkat" id="">
-                                    <option value="DIESEL">DIESEL</option>
-                                    <option value="BATTERY">BATTERY</option>
-                                    <option value="BATTERY STARTER">BATTERY STARTER</option>
-                                    <option value="AC / AIR CONDITIONER">AC / AIR CONDITIONER</option>
-                                    <option value="RECTIFIER  A">RECTIFIER A</option>
-                                    <option value="RECTIFIER  B">RECTIFIER B</option>
-                                    <option value="MDP">MDP</option>
-                                    <option value="SDP AC RUANG METRO/GPON">SDP AC RUANG METRO/GPON</option>
-                                    <option value="SDP PEN RACK SENTRAL">SDP PEN RACK SENTRAL</option>
-                                    <option value="SDP 1 RECTIFIER">SDP 1 RECTIFIER</option>
-                                    <option value="SDP 2 RECTIFIER">SDP 2 RECTIFIER</option>
-                                    <option value="SDP AC RUANG RECTIFIER">SDP AC RUANG RECTIFIER</option>
-                                    <option value="SDP AC TRASNMISI">SDP AC TRASNMISI</option>
-                                    <option value="GENERATOR">GENERATOR</option>
-                                    <option value="ATS">ATS</option>
-                                    <option value="INPUT PLN">INPUT PLN</option>
-                                    <option value="INPUT DEG">INPUT DEG</option>
-                                </select>
+                            <div class="border p-3" style="border-radius:20px">
+                                <div class="form-group ">
+                                    <label for="">Jenis Perangkat</label>
+                                    <select class="form-control form-select" name="jenis_perangkat"
+                                        id="cb_pilihan_perangkat">
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="BATTERY">BATTERY</option>
+                                        <option value="BATTERY STARTER">BATTERY STARTER</option>
+                                        <option value="AC / AIR CONDITIONER">AC / AIR CONDITIONER</option>
+                                        <option value="RECTIFIER  A">RECTIFIER A</option>
+                                        <option value="RECTIFIER  B">RECTIFIER B</option>
+                                        <option value="MDP">MDP</option>
+                                        <option value="GENERATOR">GENERATOR</option>
+                                        <option value="ATS">ATS</option>
+                                        <option value="INPUT PLN">INPUT PLN</option>
+                                        <option value="INPUT DEG">INPUT DEG</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Jenis Perangkat Lainnya ( Untuk SDP, Pilih lainnya untuk mengaktifkan
+                                        )</label>
+                                    <input type="text" class="form-control" name="jenis_perangkat_lainnya"
+                                        id="text_pilihan_perangkat" disabled aria-describedby="helpId" placeholder="Untuk SDP. Pilih Lainnya untuk mengaktifkan">
+                                </div>
                             </div>
+
+                            <script>
+                                let pilihan = document.getElementById("cb_pilihan_perangkat");
+
+                                pilihan.addEventListener("change", function() {
+                                    if (pilihan.value == "Lainnya") {
+                                        document.getElementById("text_pilihan_perangkat").disabled = false;
+                                    }else{
+                                        document.getElementById("text_pilihan_perangkat").disabled = true;
+                                    }
+                                });
+                            </script>
 
                             <div class="form-group">
                                 <label for="basicInput">Merk</label>
@@ -90,7 +109,7 @@
                         </div>
 
                         <div class="col-md-6">
-                         
+
                             <div class="form-group">
                                 <label for="basicInput">Kapasitas TPK</label>
                                 <input type="text" name="kap_tpk" class="form-control" value="{{ old('kap_tpk') }}"
@@ -108,8 +127,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="basicInput">Tahun Operasi</label>
-                                <input type="text" name="tahun_operasi" class="form-control" value="{{ old('tahun_operasi') }}"
-                                    placeholder="Tahun Operasi">
+                                <input type="text" name="tahun_operasi" class="form-control"
+                                    value="{{ old('tahun_operasi') }}" placeholder="Tahun Operasi">
                             </div>
                             <div class="form-group">
                                 <label for="basicInput">Keterangan</label>
