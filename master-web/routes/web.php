@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/template/home','template');
+Route::view('/template/home', 'template');
 
 Auth::routes();
 
@@ -53,6 +53,31 @@ Route::get('/service-node/isdn/{id}/delete', 'SERVICE_NODE_IsdnController@destro
 Route::get('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@viewUpdate');
 Route::post('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@edit');
 
+Route::prefix('problem')->group(function () {
+    Route::get('{divisi}/create', [App\Http\Controllers\ProblemController::class, 'viewCreate']);
+    Route::post('create', 'ProblemController@store')->name('store_isdn');
+    Route::get('{divisi}/manage', 'ProblemController@viewManage');
+    Route::get('{id}/delete', 'ProblemController@destroy');
+    Route::get('{id}/update', 'ProblemController@viewUpdate');
+    Route::post('{id}/update', 'ProblemController@edit');
+});
+
+Route::prefix('transport')->group(function () {
+    Route::get('/create', [App\Http\Controllers\TransportController::class, 'viewCreate']);
+    Route::post('create', 'ProblemController@store')->name('store_isdn');
+    Route::get('{divisi}/manage', 'ProblemController@viewManage');
+    Route::get('{id}/delete', 'ProblemController@destroy');
+    Route::get('{id}/update', 'ProblemController@viewUpdate');
+    Route::post('{id}/update', 'ProblemController@edit');
+});
+
+Route::get('/service-node/isdn/create', [App\Http\Controllers\SERVICE_NODE_IsdnController::class, 'viewCreate']);
+Route::post('/service-node/isdn/create', 'SERVICE_NODE_IsdnController@store')->name('store_isdn');
+Route::get('/service-node/isdn/manage', 'SERVICE_NODE_IsdnController@viewManage');
+Route::get('/service-node/isdn/{id}/delete', 'SERVICE_NODE_IsdnController@destroy');
+Route::get('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@viewUpdate');
+Route::post('/service-node/isdn/{id}/update', 'SERVICE_NODE_IsdnController@edit');
+
 
 
 Route::post('/bahan/create', [App\Http\Controllers\BahanController::class, 'viewCreate']);
@@ -70,5 +95,3 @@ Route::get('logout', function () {
 
     return Redirect::to('/');
 })->name('logout');
-
-

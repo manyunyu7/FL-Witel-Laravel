@@ -13,7 +13,6 @@ class CME_PotensiPerangkat extends Model
     function getLokasiNameAttribute()
     {
         return $this->getDivisionName($this->divisi_cme);
-
     }
     function getDivisionName($id)
     {
