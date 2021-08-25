@@ -5,13 +5,13 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Problem </h3>
-                    <p class="text-subtitle text-muted">Problem</p>
+                    <h3>Transport</h3>
+                    <p class="text-subtitle text-muted">Transport</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Problem</a></li>
+                            <li class="breadcrumb-item"><a href="#">Transport</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Create</li>
                         </ol>
                     </nav>
@@ -29,14 +29,11 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Tambahkan Data Problem</h4>
-                <h4 class="card-title">Unit : {{ $divisi_name }}</h4>
+                <h4 class="card-title"></h4>
             </div>
 
             <div class="card-body">
                 <form action="{{ url('problem/create') }}" method="post">
-                    <input type="hidden" name="id" value="">
-                    <input type="hidden" name="id_divisi" value="{{ $divisi_code }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">

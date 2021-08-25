@@ -42,8 +42,8 @@
 
                             <div class="form-group">
                                 <label for="basicInput">MGW Node</label>
-                                <input type="text" name="mgw_node" required class="form-control"
-                                    value="{{ old('mgw_node') }}" required id="basicInput" placeholder="MGW Node">
+                                <input type="text" name="mgw_node" required class="form-control" value="BDHWTG01" required
+                                    id="basicInput" placeholder="MGW Node">
                             </div>
                             <div class="form-group">
                                 <label for="basicInput">STM-No</label>
@@ -53,8 +53,13 @@
 
                             <div class="form-group">
                                 <label for="basicInput">Logical E1</label>
-                                <input type="text" name="logical_e1" class="form-control" value="{{ old('logical_e1') }}"
-                                    placeholder="Logical E1">
+                                <select class="form-control form-select" name="logical_eq" id="">
+                                    @php
+                                        for ($i = 0; $i <= 64; $i++) {
+                                            echo "<option value='$i'>$i</option>";
+                                        }
+                                    @endphp
+                                </select>
                             </div>
 
 
